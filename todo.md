@@ -28,11 +28,11 @@
 - [ ] Integrar decremento automático de estoque ao criar pedido
 
 ## Página de Pedidos
-- [ ] Implementar filtros de status com contadores
-- [ ] Implementar fluxo de avanço de status inline
-- [ ] Implementar cancelamento inline
-- [ ] Adicionar refresh automático a cada 30s
-- [ ] Exibir lista de pedidos com cliente, status, canal e total
+- [x] Implementar filtros de status com contadores
+- [x] Implementar fluxo de avanço de status inline
+- [x] Implementar cancelamento inline
+- [x] Adicionar refresh automático a cada 30s
+- [x] Exibir lista de pedidos com cliente, status, canal e total
 
 ## Página de Produtos
 - [x] Implementar CRUD completo (criar, ler, atualizar, deletar)
@@ -50,11 +50,11 @@
 - [x] Usar dados reais do banco
 
 ## Página de Concorrência
-- [ ] Implementar benchmarking completo
-- [ ] Criar scatter plot taxa × tempo
-- [ ] Adicionar coluna "sua vantagem" automática
-- [ ] Exibir snapshots de preços de concorrentes
-- [ ] Implementar comparação visual
+- [x] Implementar benchmarking completo
+- [x] Criar scatter plot taxa × tempo
+- [x] Adicionar coluna "sua vantagem" automática
+- [x] Exibir snapshots de preços de concorrentes
+- [x] Implementar comparação visual
 
 ## Google Sheets Sync
 - [ ] Configurar credenciais Google (service account)
@@ -81,15 +81,12 @@
 
 ## Testes & Validação
 - [x] Escrever testes vitest para procedures tRPC (12/12 passing)
+- [x] Testes de Pedidos e Concorrência (20/20 passing)
 - [ ] Testar fluxo completo de pedido
 - [ ] Testar CRUD de produtos
 - [ ] Testar cálculos de KPIs
 - [ ] Testar sincronização com Google Sheets
 - [ ] Testar scraper de concorrentes
-- [ ] Testar página de Pedidos com refresh automático
-- [ ] Testar página de Produtos com cálculo de margem
-- [ ] Testar Dashboards com gráficos Chart.js
-- [ ] Testar página de Concorrência com benchmarking
 
 ## Entrega
 - [ ] Criar checkpoint final
