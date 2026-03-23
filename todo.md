@@ -35,19 +35,19 @@
 - [ ] Exibir lista de pedidos com cliente, status, canal e total
 
 ## Página de Produtos
-- [ ] Implementar CRUD completo (criar, ler, atualizar, deletar)
-- [ ] Implementar cálculo de margem em tempo real
-- [ ] Adicionar mudança de cor verde/amarelo/vermelho conforme margem
-- [ ] Implementar barra de progresso de estoque por produto
-- [ ] Adicionar validação de campos
+- [x] Implementar CRUD completo (criar, ler, atualizar, deletar)
+- [x] Implementar cálculo de margem em tempo real
+- [x] Adicionar mudança de cor verde/amarelo/vermelho conforme margem
+- [x] Implementar barra de progresso de estoque por produto
+- [x] Adicionar validação de campos
 
 ## Dashboards (4 Abas)
-- [ ] Aba Vendas: gráficos de faturamento, ticket médio, pedidos por canal
-- [ ] Aba Estoque: níveis de estoque, produtos críticos, rotatividade
-- [ ] Aba Financeiro: receita, custos, lucro, fluxo de caixa
-- [ ] Aba Executivo: KPIs principais, alertas operacionais, tendências
-- [ ] Integrar Chart.js para todos os gráficos
-- [ ] Usar dados reais do banco
+- [x] Aba Vendas: gráficos de faturamento, ticket médio, pedidos por canal
+- [x] Aba Estoque: níveis de estoque, produtos críticos, rotatividade
+- [x] Aba Financeiro: receita, custos, lucro, fluxo de caixa
+- [x] Aba Executivo: KPIs principais, alertas operacionais, tendências
+- [x] Integrar Recharts para todos os gráficos
+- [x] Usar dados reais do banco
 
 ## Página de Concorrência
 - [ ] Implementar benchmarking completo
