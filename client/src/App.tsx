@@ -11,12 +11,14 @@ import Produtos from "./pages/Produtos";
 import Dashboards from "./pages/Dashboards";
 import Concorrencia from "./pages/Concorrencia";
 import Configuracoes from "./pages/Configuracoes";
+import ProjectDetails from "./pages/ProjectDetails";
 import ForgeLayout from "./components/ForgeLayout";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={ProjectDetails} />
+      <Route path={"/home"} component={Home} />
       <Route path={"/pdv"}>
         {() => (
           <ForgeLayout>
@@ -59,6 +61,7 @@ function Router() {
           </ForgeLayout>
         )}
       </Route>
+      <Route path={"/projeto"} component={ProjectDetails} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
