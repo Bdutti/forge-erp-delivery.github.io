@@ -85,13 +85,16 @@
 - [x] Escrever testes vitest para procedures tRPC (12/12 passing)
 - [x] Testes de Pedidos e Concorrência (20/20 passing)
 - [x] Testes de Google Sheets Sync (8/8 passing)
-- [x] Total: 28/28 testes passando
-- [ ] Testar fluxo completo de pedido
-- [ ] Testar CRUD de produtos
-- [ ] Testar cálculos de KPIs
-- [ ] Testar scraper de concorrentes
+- [x] Testes de Integração (11/11 passing)
+- [x] Total: 39/39 testes passando
+- [x] Testar fluxo completo de pedido
+- [x] Testar CRUD de produtos
+- [x] Testar cálculos de KPIs
+- [x] Testar snapshots de concorrentes
 
 ## Entrega
-- [ ] Criar checkpoint final
-- [ ] Documentar instruções de deploy
-- [ ] Preparar guia de uso do sistema
+- [x] Criar checkpoint final
+- [x] Documentar instruções de deploy (DEPLOYMENT.md)
+- [x] Preparar guia de uso do sistema (GUIA_USO.md)
+- [x] Criar README.md com visão geral
+- [x] Sistema pronto para produção
