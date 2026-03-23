@@ -10,6 +10,7 @@ import Pedidos from "./pages/Pedidos";
 import Produtos from "./pages/Produtos";
 import Dashboards from "./pages/Dashboards";
 import Concorrencia from "./pages/Concorrencia";
+import Configuracoes from "./pages/Configuracoes";
 import ForgeLayout from "./components/ForgeLayout";
 
 function Router() {
@@ -48,6 +49,13 @@ function Router() {
         {() => (
           <ForgeLayout>
             <Concorrencia />
+          </ForgeLayout>
+        )}
+      </Route>
+      <Route path={"/configuracoes"}>
+        {() => (
+          <ForgeLayout>
+            <Configuracoes />
           </ForgeLayout>
         )}
       </Route>

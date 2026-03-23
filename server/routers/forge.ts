@@ -9,6 +9,12 @@ import {
   getProdutos,
   getSnapshotsConcorrente,
 } from "../forgedb";
+import {
+  sincronizarTodosOsDados,
+  exportarPedidosParaSheets,
+  exportarProdutosParaSheets,
+  exportarKPIsParaSheets,
+} from "../sheets";
 
 export const forgeRouter = router({
   // ─────────────────────────────────────────────────────────────────────────
@@ -118,4 +124,85 @@ export const forgeRouter = router({
     .query(async ({ input }) => {
       return await getSnapshotsConcorrente(input);
     }),
+
+  sincronizarSheets: protectedProcedure.mutation(async () => {
+    try {
+      const pedidos = await getPedidos({});
+      const produtos = await getProdutos({});
+      const kpis = await getKPIs();
+
+      const sucesso = await sincronizarTodosOsDados(pedidos, produtos, kpis);
+
+      return {
+        sucesso,
+        mensagem: sucesso
+          ? "Dados sincronizados com Google Sheets com sucesso"
+          : "Erro ao sincronizar dados com Google Sheets",
+        timestamp: new Date(),
+      };
+    } catch (error: any) {
+      return {
+        sucesso: false,
+        mensagem: `Erro ao sincronizar: ${error.message}`,
+        timestamp: new Date(),
+      };
+    }
+  }),
+
+  exportarPedidosSheets: protectedProcedure.mutation(async () => {
+    try {
+      const pedidos = await getPedidos({});
+      const sucesso = await exportarPedidosParaSheets(pedidos);
+
+      return {
+        sucesso,
+        mensagem: sucesso
+          ? `${pedidos.length} pedidos exportados com sucesso`
+          : "Erro ao exportar pedidos",
+      };
+    } catch (error: any) {
+      return {
+        sucesso: false,
+        mensagem: `Erro: ${error.message}`,
+      };
+    }
+  }),
+
+  exportarProdutosSheets: protectedProcedure.mutation(async () => {
+    try {
+      const produtos = await getProdutos({});
+      const sucesso = await exportarProdutosParaSheets(produtos);
+
+      return {
+        sucesso,
+        mensagem: sucesso
+          ? `${produtos.length} produtos exportados com sucesso`
+          : "Erro ao exportar produtos",
+      };
+    } catch (error: any) {
+      return {
+        sucesso: false,
+        mensagem: `Erro: ${error.message}`,
+      };
+    }
+  }),
+
+  exportarKPIsSheets: protectedProcedure.mutation(async () => {
+    try {
+      const kpis = await getKPIs();
+      const sucesso = await exportarKPIsParaSheets(kpis);
+
+      return {
+        sucesso,
+        mensagem: sucesso
+          ? "KPIs exportados com sucesso"
+          : "Erro ao exportar KPIs",
+      };
+    } catch (error: any) {
+      return {
+        sucesso: false,
+        mensagem: `Erro: ${error.message}`,
+      };
+    }
+  }),
 });

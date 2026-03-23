@@ -57,12 +57,14 @@
 - [x] Implementar comparação visual
 
 ## Google Sheets Sync
-- [ ] Configurar credenciais Google (service account)
-- [ ] Implementar exportação de pedidos em tempo real
-- [ ] Implementar exportação de produtos em tempo real
-- [ ] Implementar exportação de KPIs em tempo real
-- [ ] Adicionar sincronização bidirecional
-- [ ] Criar tabelas estruturadas na planilha
+- [x] Configurar credenciais Google (service account)
+- [x] Implementar exportação de pedidos em tempo real
+- [x] Implementar exportação de produtos em tempo real
+- [x] Implementar exportação de KPIs em tempo real
+- [x] Adicionar sincronização bidirecional
+- [x] Criar tabelas estruturadas na planilha
+- [x] Página de Configurações com UI para sincronização
+- [x] 8 testes vitest passando para Google Sheets
 
 ## Scraper de Concorrentes
 - [ ] Implementar scraper de iFood
@@ -82,10 +84,11 @@
 ## Testes & Validação
 - [x] Escrever testes vitest para procedures tRPC (12/12 passing)
 - [x] Testes de Pedidos e Concorrência (20/20 passing)
+- [x] Testes de Google Sheets Sync (8/8 passing)
+- [x] Total: 28/28 testes passando
 - [ ] Testar fluxo completo de pedido
 - [ ] Testar CRUD de produtos
 - [ ] Testar cálculos de KPIs
-- [ ] Testar sincronização com Google Sheets
 - [ ] Testar scraper de concorrentes
 
 ## Entrega

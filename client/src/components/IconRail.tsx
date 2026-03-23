@@ -94,7 +94,14 @@ export default function IconRail() {
       <div className="flex flex-col gap-3 border-t border-s3 pt-4">
         <Tooltip>
           <TooltipTrigger asChild>
-            <button className="w-12 h-12 rounded-lg text-muted-foreground hover:text-foreground hover:bg-s3 flex items-center justify-center transition-all duration-200">
+            <button
+              onClick={() => navigate('/configuracoes')}
+              className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-200 ${
+                isActive('/configuracoes')
+                  ? 'bg-brasa text-white shadow-lg'
+                  : 'text-muted-foreground hover:text-foreground hover:bg-s3'
+              }`}
+            >
               <Settings className="w-5 h-5" />
             </button>
           </TooltipTrigger>
