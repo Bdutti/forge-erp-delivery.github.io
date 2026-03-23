@@ -5,14 +5,53 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import PDV from "./pages/PDV";
+import Pedidos from "./pages/Pedidos";
+import Produtos from "./pages/Produtos";
+import Dashboards from "./pages/Dashboards";
+import Concorrencia from "./pages/Concorrencia";
+import ForgeLayout from "./components/ForgeLayout";
 
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/pdv"}>
+        {() => (
+          <ForgeLayout>
+            <PDV />
+          </ForgeLayout>
+        )}
+      </Route>
+      <Route path={"/pedidos"}>
+        {() => (
+          <ForgeLayout>
+            <Pedidos />
+          </ForgeLayout>
+        )}
+      </Route>
+      <Route path={"/produtos"}>
+        {() => (
+          <ForgeLayout>
+            <Produtos />
+          </ForgeLayout>
+        )}
+      </Route>
+      <Route path={"/dashboards"}>
+        {() => (
+          <ForgeLayout>
+            <Dashboards />
+          </ForgeLayout>
+        )}
+      </Route>
+      <Route path={"/concorrencia"}>
+        {() => (
+          <ForgeLayout>
+            <Concorrencia />
+          </ForgeLayout>
+        )}
+      </Route>
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -27,8 +66,7 @@ function App() {
   return (
     <ErrorBoundary>
       <ThemeProvider
-        defaultTheme="light"
-        // switchable
+        defaultTheme="dark"
       >
         <TooltipProvider>
           <Toaster />

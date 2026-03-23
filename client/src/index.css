@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FORGE DARK THEME — Industrial Steel Surface + Brasa Accent
+   ───────────────────────────────────────────────────────────────────────────── */
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -40,86 +45,159 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-s0: var(--s0);
+  --color-s1: var(--s1);
+  --color-s2: var(--s2);
+  --color-s3: var(--s3);
+  --color-s4: var(--s4);
+  --color-s5: var(--s5);
+  --color-s6: var(--s6);
+  --color-brasa: var(--brasa);
+  --color-brasa-dark: var(--brasa-dark);
+  --color-brasa-light: var(--brasa-light);
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* Forge Dark — 6 Surface Layers (--s0 to --s6) */
+  --s0: #0a0e12;    /* Deepest black */
+  --s1: #0f1419;    /* Deep steel */
+  --s2: #141a22;    /* Steel base */
+  --s3: #1a2332;    /* Steel raised */
+  --s4: #212d3a;    /* Steel light */
+  --s5: #2a3a4a;    /* Steel lighter */
+  --s6: #34465a;    /* Steel lightest */
+
+  /* Brasa Accent — #ff6b2b with glow */
+  --brasa: #ff6b2b;
+  --brasa-dark: #e55a1a;
+  --brasa-light: #ff8a52;
+
+  /* Primary colors */
+  --primary: var(--brasa);
+  --primary-foreground: #ffffff;
+  --sidebar-primary: var(--brasa);
+  --sidebar-primary-foreground: #ffffff;
+  
+  /* Chart colors */
+  --chart-1: #ff6b2b;
+  --chart-2: #00d4ff;
+  --chart-3: #00ff88;
+  --chart-4: #ffa500;
+  --chart-5: #ff1493;
+  
+  /* Radius */
+  --radius: 0.5rem;
+  
+  /* Forge Dark semantic colors */
+  --background: var(--s0);
+  --foreground: #f5f5f5;
+  --card: var(--s2);
+  --card-foreground: #f5f5f5;
+  --popover: var(--s3);
+  --popover-foreground: #f5f5f5;
+  --secondary: var(--s4);
+  --secondary-foreground: #a8b0b8;
+  --muted: var(--s4);
+  --muted-foreground: #a8b0b8;
+  --accent: var(--brasa);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--s3);
+  --input: var(--s2);
+  --ring: var(--brasa);
+  --sidebar: var(--s1);
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-accent: var(--brasa);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--s3);
+  --sidebar-ring: var(--brasa);
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --s0: #0a0e12;
+  --s1: #0f1419;
+  --s2: #141a22;
+  --s3: #1a2332;
+  --s4: #212d3a;
+  --s5: #2a3a4a;
+  --s6: #34465a;
+  --brasa: #ff6b2b;
+  --brasa-dark: #e55a1a;
+  --brasa-light: #ff8a52;
+  --primary: var(--brasa);
+  --primary-foreground: #ffffff;
+  --sidebar-primary: var(--brasa);
+  --sidebar-primary-foreground: #ffffff;
+  --chart-1: #ff6b2b;
+  --chart-2: #00d4ff;
+  --chart-3: #00ff88;
+  --chart-4: #ffa500;
+  --chart-5: #ff1493;
+  --background: var(--s0);
+  --foreground: #f5f5f5;
+  --card: var(--s2);
+  --card-foreground: #f5f5f5;
+  --popover: var(--s3);
+  --popover-foreground: #f5f5f5;
+  --secondary: var(--s4);
+  --secondary-foreground: #a8b0b8;
+  --muted: var(--s4);
+  --muted-foreground: #a8b0b8;
+  --accent: var(--brasa);
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--s3);
+  --input: var(--s2);
+  --ring: var(--brasa);
+  --sidebar: var(--s1);
+  --sidebar-foreground: #f5f5f5;
+  --sidebar-accent: var(--brasa);
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: var(--s3);
+  --sidebar-ring: var(--brasa);
 }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+   ───────────────────────────────────────────────────────────────────────────── */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'DM Mono', monospace;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    position: relative;
   }
+
+  /* Grain overlay — subtle noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" seed="2"/><feColorMatrix in="noise" type="saturate" values="0.3"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.02"/></svg>');
+    z-index: 0;
+  }
+
+  /* Ensure content is above grain */
+  body > * {
+    position: relative;
+    z-index: 1;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -131,27 +209,175 @@
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
   }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-bold;
+  }
+
+  h3 {
+    @apply text-2xl font-bold;
+  }
+
+  h4 {
+    @apply text-xl font-bold;
+  }
+
+  h5 {
+    @apply text-lg font-bold;
+  }
+
+  h6 {
+    @apply text-base font-bold;
+  }
+
+  p {
+    font-family: 'DM Mono', monospace;
+    @apply text-sm leading-relaxed;
+  }
+
+  code {
+    font-family: 'DM Mono', monospace;
+    @apply text-xs bg-muted px-1.5 py-0.5 rounded;
+  }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   BRASA ACCENT — Glow Effects
+   ───────────────────────────────────────────────────────────────────────────── */
+
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
+  .brasa-glow {
+    @apply text-brasa;
+    text-shadow: 0 0 8px rgba(255, 107, 43, 0.6), 0 0 16px rgba(255, 107, 43, 0.3);
+  }
+
+  .brasa-glow-box {
+    @apply border border-brasa bg-brasa/5;
+    box-shadow: 0 0 16px rgba(255, 107, 43, 0.2), inset 0 0 8px rgba(255, 107, 43, 0.1);
+  }
+
+  .brasa-glow-button {
+    @apply bg-brasa text-white font-bold transition-all duration-200;
+    box-shadow: 0 0 12px rgba(255, 107, 43, 0.4);
+  }
+
+  .brasa-glow-button:hover {
+    @apply bg-brasa-light;
+    box-shadow: 0 0 20px rgba(255, 107, 43, 0.6), 0 0 30px rgba(255, 107, 43, 0.3);
+  }
+
+  .brasa-glow-button:active {
+    @apply bg-brasa-dark;
+    box-shadow: 0 0 8px rgba(255, 107, 43, 0.4);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ANIMATIONS — Staggered Entrance
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 12px rgba(255, 107, 43, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(255, 107, 43, 0.6);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.4s ease-out;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  /* Staggered animations */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  .stagger-5 {
+    animation-delay: 0.5s;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CONTAINER & LAYOUT
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +388,39 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLLBAR STYLING
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-s2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-s4 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-s5;
   }
 }
