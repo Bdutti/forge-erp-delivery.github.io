@@ -225,16 +225,16 @@ export async function getKPIs() {
   // Profit calculation
   const [lucroData] = await db
     .select({
-      receita: sql<number>`COALESCE(SUM(CAST(p.total AS DECIMAL(10,2))), 0)`,
-      custo: sql<number>`COALESCE(SUM(CAST(pr.custo AS DECIMAL(10,2)) * ip.quantidade), 0)`,
+      receita: sql<number>`COALESCE(SUM(CAST(${pedidos.total} AS DECIMAL(10,2))), 0)`,
+      custo: sql<number>`COALESCE(SUM(CAST(${produtos.custo} AS DECIMAL(10,2)) * ${itensPedido.quantidade}), 0)`,
     })
-    .from(pedidos.as("p"))
-    .leftJoin(itensPedido.as("ip"), eq(sql`p.id`, sql`ip.pedidoId`))
-    .leftJoin(produtos.as("pr"), eq(sql`ip.produtoId`, sql`pr.id`))
+    .from(pedidos)
+    .leftJoin(itensPedido, eq(pedidos.id, itensPedido.pedidoId))
+    .leftJoin(produtos, eq(itensPedido.produtoId, produtos.id))
     .where(
       and(
-        eq(sql`p.status`, "entregue"),
-        sql`DATE(p.createdAt) = DATE(${today})`
+        eq(pedidos.status, "entregue"),
+        sql`DATE(${pedidos.createdAt}) = DATE(${today})`
       )
     );
 
