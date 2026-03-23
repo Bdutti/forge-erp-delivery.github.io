@@ -16,14 +16,15 @@
 - [x] Implementar upsertProduto()
 - [x] Implementar atualizarStatus()
 - [x] Implementar getKPIs()
-- [ ] Criar procedures tRPC para todas as operações
+- [x] Criar procedures tRPC para todas as operações
+- [x] Implementar testes vitest para procedures (12/12 passing)
 
 ## PDV Fullscreen
-- [ ] Implementar grid de produtos com stripes de categoria coloridas
-- [ ] Implementar busca em tempo real
-- [ ] Criar pills de categoria horizontal
-- [ ] Implementar checkout panel fixo à direita com total gigante
-- [ ] Adicionar toast de confirmação com número do pedido
+- [x] Implementar grid de produtos com stripes de categoria coloridas
+- [x] Implementar busca em tempo real
+- [x] Criar pills de categoria horizontal
+- [x] Implementar checkout panel fixo à direita com total gigante
+- [x] Adicionar toast de confirmação com número do pedido
 - [ ] Integrar decremento automático de estoque ao criar pedido
 
 ## Página de Pedidos
@@ -79,12 +80,16 @@
 - [ ] Configurar secrets (GOOGLE_CREDENTIALS_B64, SHEETS_ID, etc.)
 
 ## Testes & Validação
-- [ ] Escrever testes vitest para procedures tRPC
+- [x] Escrever testes vitest para procedures tRPC (12/12 passing)
 - [ ] Testar fluxo completo de pedido
 - [ ] Testar CRUD de produtos
 - [ ] Testar cálculos de KPIs
 - [ ] Testar sincronização com Google Sheets
 - [ ] Testar scraper de concorrentes
+- [ ] Testar página de Pedidos com refresh automático
+- [ ] Testar página de Produtos com cálculo de margem
+- [ ] Testar Dashboards com gráficos Chart.js
+- [ ] Testar página de Concorrência com benchmarking
 
 ## Entrega
 - [ ] Criar checkpoint final
