@@ -213,7 +213,7 @@ export default function Pedidos() {
                       </div>
                       <div>
                         <p className="text-muted-foreground text-xs">Total</p>
-                        <p className="font-bold text-accent">R$ {pedido.total?.toFixed(2) || "0.00"}</p>
+                        <p className="font-bold text-accent">R$ {(parseFloat(pedido.total) || 0).toFixed(2)}</p>
                       </div>
                       <div>
                         <p className="text-muted-foreground text-xs">Itens</p>
@@ -230,7 +230,7 @@ export default function Pedidos() {
                             <div key={idx} className="flex justify-between">
                               <span>{item.produto?.nome || "Produto"}</span>
                               <span className="text-muted-foreground">
-                                {item.quantidade}x R$ {item.preco?.toFixed(2) || "0.00"}
+                                {item.quantidade}x R$ {(parseFloat(item.preco) || 0).toFixed(2)}
                               </span>
                             </div>
                           ))}
@@ -300,13 +300,13 @@ export default function Pedidos() {
             <div>
               <p className="text-muted-foreground text-xs">Faturamento</p>
               <p className="text-xl font-bold text-green-500">
-                R$ {pedidos.reduce((sum: number, p: any) => sum + (p.total || 0), 0).toFixed(0)}
+                R$ {(pedidos.reduce((sum: number, p: any) => sum + (parseFloat(p.total) || 0), 0)).toFixed(2)}
               </p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs">Ticket Médio</p>
               <p className="text-xl font-bold">
-                R$ {(pedidos.reduce((sum: number, p: any) => sum + (p.total || 0), 0) / pedidos.length).toFixed(2)}
+                R$ {((pedidos.reduce((sum: number, p: any) => sum + (parseFloat(p.total) || 0), 0) / (pedidos.length || 1)) || 0).toFixed(2)}
               </p>
             </div>
             <div>
