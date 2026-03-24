@@ -98,3 +98,12 @@
 - [x] Preparar guia de uso do sistema (GUIA_USO.md)
 - [x] Criar README.md com visão geral
 - [x] Sistema pronto para produção
+
+## Feedback do Usuário
+- [x] Criar tabela de feedback no banco de dados
+- [x] Implementar procedure tRPC para salvar feedback (5 procedures)
+- [x] Criar componente FeedbackButton flutuante
+- [x] Criar dialog FeedbackForm com validação
+- [x] Integrar feedback em todas as páginas
+- [ ] Criar página de Admin para visualizar feedbacks
+- [x] Adicionar testes para feedback (10/10 passing)

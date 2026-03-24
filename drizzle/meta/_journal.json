@@ -15,6 +15,13 @@
       "when": 1774289396876,
       "tag": "0001_stormy_tag",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1774327996361,
+      "tag": "0002_nifty_white_tiger",
+      "breakpoints": true
     }
   ]
 }

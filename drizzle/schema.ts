@@ -134,3 +134,22 @@ export const configuracoes = mysqlTable("configuracoes", {
 
 export type Configuracao = typeof configuracoes.$inferSelect;
 export type InsertConfiguracao = typeof configuracoes.$inferInsert;
+
+/**
+ * Feedbacks — User feedback and suggestions
+ */
+export const feedbacks = mysqlTable("feedbacks", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  tipo: mysqlEnum("tipo", ["bug", "sugestao", "elogio", "outro"]).default("sugestao").notNull(),
+  pagina: varchar("pagina", { length: 255 }),
+  mensagem: text("mensagem").notNull(),
+  email: varchar("email", { length: 320 }),
+  status: mysqlEnum("status", ["novo", "lido", "em_analise", "resolvido"]).default("novo").notNull(),
+  resposta: text("resposta"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type Feedback = typeof feedbacks.$inferSelect;
+export type InsertFeedback = typeof feedbacks.$inferInsert;
