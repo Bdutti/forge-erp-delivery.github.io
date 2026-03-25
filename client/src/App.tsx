@@ -12,6 +12,7 @@ import Produtos from "./pages/Produtos";
 import Dashboards from "./pages/Dashboards";
 import Concorrencia from "./pages/Concorrencia";
 import Configuracoes from "./pages/Configuracoes";
+import Relatorios from "./pages/Relatorios";
 import ProjectDetails from "./pages/ProjectDetails";
 import ForgeLayout from "./components/ForgeLayout";
 
@@ -59,6 +60,13 @@ function Router() {
         {() => (
           <ForgeLayout>
             <Configuracoes />
+          </ForgeLayout>
+        )}
+      </Route>
+      <Route path={"/relatorios"}>
+        {() => (
+          <ForgeLayout>
+            <Relatorios />
           </ForgeLayout>
         )}
       </Route>

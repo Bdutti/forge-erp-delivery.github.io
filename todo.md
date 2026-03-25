@@ -107,3 +107,15 @@
 - [x] Integrar feedback em todas as páginas
 - [ ] Criar página de Admin para visualizar feedbacks
 - [x] Adicionar testes para feedback (10/10 passing)
+
+## Relatórios & Exportação PDF
+- [ ] Criar página de Relatórios
+- [ ] Implementar geração de Relatório de Vendas (PDF)
+- [ ] Implementar geração de Relatório de Estoque (PDF)
+- [ ] Implementar geração de Relatório de Concorrência (PDF)
+- [ ] Implementar geração de Relatório Executivo (PDF)
+- [ ] Adicionar filtros de período (dia, semana, mês, customizado)
+- [ ] Adicionar filtros de canal (balcão, iFood, WhatsApp, telefone)
+- [ ] Integrar jsPDF + html2canvas para renderização
+- [ ] Adicionar testes para geração de relatórios
+- [ ] Criar ícone de Relatórios no rail lateral

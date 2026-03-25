@@ -1,4 +1,4 @@
-import { BarChart3, Box, Gauge, Home, LogOut, Settings, TrendingUp } from 'lucide-react';
+import { BarChart3, Box, Gauge, Home, LogOut, Settings, TrendingUp, FileText } from 'lucide-react';
 import { useLocation } from 'wouter';
 import { useAuth } from '@/_core/hooks/useAuth';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
@@ -46,6 +46,12 @@ export default function IconRail() {
       label: 'Concorrência',
       icon: <TrendingUp className="w-5 h-5" />,
       path: '/concorrencia',
+    },
+    {
+      id: 'relatorios',
+      label: 'Relatórios',
+      icon: <FileText className="w-5 h-5" />,
+      path: '/relatorios',
     },
   ];
 
