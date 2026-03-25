@@ -70,10 +70,13 @@ export default function Produtos() {
     return Array.from(cats);
   }, [produtos]);
 
-  // Calcular margem
-  const calcularMargem = (preco: number, custo: number) => {
-    if (custo === 0 || preco === 0) return 0;
-    return ((preco - custo) / preco) * 100;
+  // Calcular margem com proteção contra valores inválidos
+  const calcularMargem = (preco: number | string, custo: number | string) => {
+    const p = parseFloat(String(preco)) || 0;
+    const c = parseFloat(String(custo)) || 0;
+    if (c === 0 || p === 0) return 0;
+    const margem = ((p - c) / p) * 100;
+    return isFinite(margem) ? margem : 0;
   };
 
   // Cor da margem
@@ -235,11 +238,14 @@ export default function Produtos() {
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-medium">Margem de Lucro</span>
                     <span className={`text-lg font-bold ${getCorMargem(calcularMargem(formData.preco, formData.custo))}`}>
-                      {calcularMargem(formData.preco, formData.custo).toFixed(1)}%
+                      {(() => {
+                        const margem = calcularMargem(formData.preco, formData.custo);
+                        return isFinite(margem) ? margem.toFixed(1) : "0.0";
+                      })()}%
                     </span>
                   </div>
                   <div className="text-xs text-muted-foreground mt-1">
-                    Lucro: R$ {(formData.preco - formData.custo).toFixed(2)}
+                    Lucro: R$ {(Math.max(formData.preco - formData.custo, 0)).toFixed(2)}
                   </div>
                 </div>
               )}
@@ -351,9 +357,9 @@ export default function Produtos() {
               </tr>
             ) : (
               produtosFiltrados.map((produto: any) => {
-                const margem = calcularMargem(parseFloat(produto.preco), parseFloat(produto.custo));
-                const estoque = parseFloat(produto.estoque);
-                const estoquePercentual = Math.min((estoque / 100) * 100, 100);
+                const margem = calcularMargem(produto.preco, produto.custo);
+                const estoque = parseFloat(produto.estoque) || 0;
+                const estoquePercentual = Math.min(Math.max((estoque / 100) * 100, 0), 100);
                 const alertaEstoque = estoque < 10;
 
                 return (
@@ -366,21 +372,21 @@ export default function Produtos() {
                     </td>
                     <td className="py-3 px-4 font-mono text-xs">{produto.sku || "-"}</td>
                     <td className="py-3 px-4 text-right font-semibold">
-                      R$ {parseFloat(produto.preco).toFixed(2)}
+                      R$ {(parseFloat(produto.preco) || 0).toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-right">
-                      R$ {parseFloat(produto.custo).toFixed(2)}
+                      R$ {(parseFloat(produto.custo) || 0).toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-center">
                       <Badge className={`${getCorMargem(margem)} bg-transparent border`}>
-                        {margem.toFixed(1)}%
+                        {isFinite(margem) ? margem.toFixed(1) : "0.0"}%
                       </Badge>
                     </td>
                     <td className="py-3 px-4">
                       <div className="space-y-1">
                         <div className="flex items-center gap-2">
                           {alertaEstoque && <AlertCircle className="w-4 h-4 text-red-500" />}
-                          <span className="font-semibold">{estoque.toFixed(0)}</span>
+                          <span className="font-semibold">{isFinite(estoque) ? estoque.toFixed(0) : "0"}</span>
                         </div>
                         <Progress value={estoquePercentual} className="h-1" />
                       </div>

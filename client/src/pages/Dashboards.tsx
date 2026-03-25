@@ -74,7 +74,7 @@ export default function Dashboards() {
               <div>
                 <p className="text-sm text-muted-foreground">Faturamento</p>
                 <p className="text-2xl font-bold font-barlow-condensed text-accent">
-                  R$ {kpis.faturamento.toFixed(0)}
+                  R$ {(parseFloat(String(kpis.faturamento)) || 0).toFixed(0)}
                 </p>
               </div>
               <DollarSign className="w-8 h-8 text-accent opacity-50" />
@@ -86,7 +86,7 @@ export default function Dashboards() {
               <div>
                 <p className="text-sm text-muted-foreground">Ticket Médio</p>
                 <p className="text-2xl font-bold font-barlow-condensed">
-                  R$ {kpis.ticketMedio.toFixed(2)}
+                  R$ {(parseFloat(String(kpis.ticketMedio)) || 0).toFixed(2)}
                 </p>
               </div>
               <TrendingUp className="w-8 h-8 text-blue-500 opacity-50" />
@@ -181,7 +181,7 @@ export default function Dashboards() {
                       <p className="text-xs text-muted-foreground">{pedido.canal}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-semibold">R$ {pedido.total?.toFixed(2) || "0.00"}</p>
+                      <p className="font-semibold">R$ {(parseFloat(pedido.total) || 0).toFixed(2)}</p>
                       <Badge variant="outline" className="text-xs">
                         {pedido.status}
                       </Badge>
@@ -223,7 +223,7 @@ export default function Dashboards() {
                       <p className="text-xs text-muted-foreground">{produto.categoria}</p>
                     </div>
                     <div className="text-right">
-                      <p className="font-bold text-red-500">{parseFloat(produto.estoque).toFixed(0)} un</p>
+                      <p className="font-bold text-red-500">{(parseFloat(produto.estoque) || 0).toFixed(0)} un</p>
                     </div>
                   </div>
                 ))}
@@ -289,15 +289,15 @@ export default function Dashboards() {
                 <div className="grid grid-cols-3 gap-4">
                   <div className="p-3 bg-s2 rounded text-center">
                     <p className="text-xs text-muted-foreground mb-1">Receita Total</p>
-                    <p className="text-xl font-bold text-green-500">R$ {kpis.lucro.receita.toFixed(0)}</p>
+                    <p className="text-xl font-bold text-green-500">R$ {(parseFloat(String(kpis.lucro.receita)) || 0).toFixed(0)}</p>
                   </div>
                   <div className="p-3 bg-s2 rounded text-center">
                     <p className="text-xs text-muted-foreground mb-1">Custo Total</p>
-                    <p className="text-xl font-bold text-red-500">R$ {kpis.lucro.custo.toFixed(0)}</p>
+                    <p className="text-xl font-bold text-red-500">R$ {(parseFloat(String(kpis.lucro.custo)) || 0).toFixed(0)}</p>
                   </div>
                   <div className="p-3 bg-s2 rounded text-center">
                     <p className="text-xs text-muted-foreground mb-1">Lucro Líquido</p>
-                    <p className="text-xl font-bold text-accent">R$ {kpis.lucro.lucroLiquido.toFixed(0)}</p>
+                    <p className="text-xl font-bold text-accent">R$ {(parseFloat(String(kpis.lucro.lucroLiquido)) || 0).toFixed(0)}</p>
                   </div>
                 </div>
               </Card>
@@ -316,11 +316,11 @@ export default function Dashboards() {
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-2 bg-s2 rounded">
                       <span className="text-sm">Faturamento Diário</span>
-                      <span className="font-bold text-accent">R$ {(kpis.faturamento / 30).toFixed(0)}</span>
+                      <span className="font-bold text-accent">R$ {((parseFloat(String(kpis.faturamento)) || 0) / 30).toFixed(0)}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-s2 rounded">
                       <span className="text-sm">Ticket Médio</span>
-                      <span className="font-bold">R$ {kpis.ticketMedio.toFixed(2)}</span>
+                      <span className="font-bold">R$ {(parseFloat(String(kpis.ticketMedio)) || 0).toFixed(2)}</span>
                     </div>
                     <div className="flex justify-between items-center p-2 bg-s2 rounded">
                       <span className="text-sm">Margem Média</span>
