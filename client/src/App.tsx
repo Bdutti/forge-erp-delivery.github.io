@@ -13,6 +13,8 @@ import Dashboards from "./pages/Dashboards";
 import Concorrencia from "./pages/Concorrencia";
 import Configuracoes from "./pages/Configuracoes";
 import Relatorios from "./pages/Relatorios";
+import Registro from "./pages/Registro";
+import Login from "./pages/Login";
 import ProjectDetails from "./pages/ProjectDetails";
 import ForgeLayout from "./components/ForgeLayout";
 
@@ -20,6 +22,8 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={ProjectDetails} />
+      <Route path={"/registro"} component={Registro} />
+      <Route path={"/login"} component={Login} />
       <Route path={"/home"} component={Home} />
       <Route path={"/pdv"}>
         {() => (

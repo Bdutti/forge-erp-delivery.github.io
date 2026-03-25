@@ -119,3 +119,15 @@
 - [ ] Integrar jsPDF + html2canvas para renderização
 - [ ] Adicionar testes para geração de relatórios
 - [ ] Criar ícone de Relatórios no rail lateral
+
+## Autenticação por E-mail e Senha
+- [x] Instalar bcryptjs para hash de senha
+- [x] Criar página de Registro com formulário
+- [x] Criar página de Login com formulário
+- [x] Implementar procedure tRPC para registrar usuário
+- [x] Implementar procedure tRPC para fazer login
+- [x] Adicionar validação de e-mail único
+- [x] Adicionar validação de senha forte
+- [ ] Implementar proteção de rotas autenticadas
+- [x] Adicionar testes para autenticação (14/14 passing)
+- [ ] Criar página de Recuperação de Senha (opcional)
