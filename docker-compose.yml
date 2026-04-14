@@ -1,0 +1,20 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: forge_erp
+      MYSQL_USER: forge_user
+      MYSQL_PASSWORD: user_password
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+    driver: local
